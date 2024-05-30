@@ -288,11 +288,11 @@ def LaunchCommand(Command, WorkingDir,ModuleAuto = None):
 
         EdkLogger.info("Built with Respfile ... %s", WorkingDir)
 
-        for i in range(0, len(RespContent), 2):
-            cmd = RespContent[i]
-            cmd = cmd[cmd.find("OUTPUT")+7 : cmd.find("_resp.txt")]
-            flags = RespContent[i+1]
-            EdkLogger.info("  \"%s_FLAGS\" : %s" % (cmd.upper(), flags))
+        #for i in range(0, len(RespContent), 2):
+            #cmd = RespContent[i]
+            #cmd = cmd[cmd.find("OUTPUT")+7 : cmd.find("_resp.txt")]
+            #flags = RespContent[i+1]
+            #EdkLogger.info("  \"%s_FLAGS\" : %s" % (cmd.upper(), flags))
 
     if Proc.returncode != 0:
         Command = " ".join(Command)
@@ -2224,7 +2224,7 @@ class Build():
                 self.SkuId,
                 self.UniFlag,
                 self.Progress
-                )        
+                )
         GenerateStackCookieValues() # MU_CHANGE: Add build-time random stack cookie support
         self.Fdf = Wa.FdfFile
         self.LoadFixAddress = Wa.Platform.LoadFixAddress
